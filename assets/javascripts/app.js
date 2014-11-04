@@ -1,0 +1,7 @@
+//= require "_jquery"
+//= require "_bootstrap"
+//= require "_d3"
+//= require "_markdown"
+//= require "_math"
+//= require "_problems"
+//= require "_game"

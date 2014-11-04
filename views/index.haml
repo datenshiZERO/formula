@@ -1,0 +1,96 @@
+!!!
+%html{:lang => "en"}
+  %head
+    - unless @cocoon
+      %meta{:charset => "utf-8"}/
+      %meta{:content => "IE=Edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+      %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+      %title Formula
+      %meta{:content => "", :name => "description"}/
+      %meta{:content => "Formula", :property => "og:title"}/
+      %meta{:content => "", :property => "og:description"}/
+      %meta{:content => "website", :property => "og:type"}/
+      %meta{:content => "", :property => "og:url"}/
+      %meta{:content => image_path("opengraph.png"), :property => "og:image"}/
+      %meta{:content => "200", :property => "og:image:width"}/
+      %meta{:content => "200", :property => "og:image:height"}/
+      %link{:href => "./favicon.ico", :rel => "shortcut icon"}/
+      %link{:rel => "stylesheet", :href => "//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"}
+  %body
+    .navbar.navbar-default.navbar-static{:role => "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} Formula
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "#"} Home
+            %li
+              %a{:href => "#about"} About
+            %li
+              %a{:href => "#contact"} Contact
+    .container
+      %h1#problem-title
+      %hr
+      .row
+        .col-xs-12
+          #problem-description
+      .row
+        .col-xs-12
+          #data-table
+      %hr
+      .row
+        .col-xs-12
+          #status
+            Time:
+            %span#time -
+            Distance:
+            %span#distance -
+            Velocity:
+            %span#velocity -
+            Acceleration:
+            %span#acceleration -
+            Score:
+            %span#score -
+            
+      .row
+        .col-xs-12
+          #game-container.well
+
+      .row
+        %form.form-inline{:role => "form"}
+          .form-group
+            %input#formula.form-control{:placeholder => "Enter formula here", :style => "width:600px", :type => "text"}/
+          %button.btn.btn-default#play
+            %span.glyphicon.glyphicon-play
+          %button.btn.btn-default{:disabled => "disabled"}
+            %span.glyphicon.glyphicon-backward
+      .row
+        %form.form-inline{:role => "form"}
+          %label Time Conversion:
+          %input#conversion.form-control{:type => "text", :value => "time"}
+          %label Speed:
+          %select.form-control
+            %option slower
+            %option slow
+            %option{:selected => "selected"} normal
+            %option fast
+            %option faster
+          %label Scaling:
+          %select.form-control
+            %option{:selected => "selected"} linear
+            %option logarithmic
+          %label Range:
+          %select.form-control
+            %option{:selected => "selected"} small
+            %option medium
+            %option large
+      .row
+        %h2 Problems
+        #problems
+    %script{:type => "text/javascript", :src => javascript_path("app")}
