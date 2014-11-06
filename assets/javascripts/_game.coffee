@@ -179,6 +179,7 @@ class FormulaGame
           $("#score").text(@score)
           if @score is @targetCount
             clearInterval @intervalId
+            alertify.alert "Success!"
       if obstacle?
         if obstacle.value > h
           trail.attr("fill", "red")
