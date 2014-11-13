@@ -76,24 +76,28 @@
             %span.glyphicon.glyphicon-backward
       .row
         %form.form-inline{:role => "form"}
-          %label Time Conversion:
-          %input#conversion.form-control{:type => "text", :value => "time"}
-          %label Speed:
-          %select.form-control
-            %option slower
-            %option slow
-            %option{:selected => "selected"} normal
-            %option fast
-            %option faster
-          %label Scaling:
-          %select.form-control
-            %option{:selected => "selected"} linear
-            %option logarithmic
-          %label Range:
-          %select.form-control
-            %option{:selected => "selected"} small
-            %option medium
-            %option large
+          %span#form-conversion
+            %label Time Conversion:
+            %input#conversion.form-control{:type => "text", :value => "time"}
+          %span#form-speed
+            %label Speed:
+            %select.form-control
+              %option slower
+              %option slow
+              %option{:selected => "selected"} normal
+              %option fast
+              %option faster
+          %span#form-scaling
+            %label Scaling:
+            %select.form-control
+              %option{:selected => "selected"} linear
+              %option logarithmic
+          %span#form-range
+            %label Range:
+            %select.form-control
+              %option{:selected => "selected"} small
+              %option medium
+              %option large
       .row
         %h2 Problems
         #problems

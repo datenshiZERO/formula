@@ -176,10 +176,10 @@ class FormulaGame
     #else
       #h = a * 50
 
-    $("#time").text("#{Math.round(time * 1000)/1000} s")
-    $("#distance").text("#{Math.round(d * 1000)/1000} m")
-    $("#velocity").text("#{Math.round(v * 1000)/1000} m/s")
-    $("#acceleration").html("#{Math.round(a * 1000)/1000} m/s<sup>2</sup>")
+    $("#time").text("#{Math.round(time * 1000)/1000}s")
+    $("#distance").text("#{Math.round(d * 1000)/1000}m")
+    $("#velocity").text("#{Math.round(v * 1000)/1000}m/s")
+    $("#acceleration").html("#{Math.round(a * 1000)/1000}m/s<sup>2</sup>")
     #console.log h if ii % 25 is 0
 
     checkPoint = @problem.targets[@tick * @timePixelRatio()]
