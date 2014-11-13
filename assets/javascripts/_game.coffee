@@ -96,7 +96,10 @@ class FormulaGame
     $("#problem-title").text(@problem.title)
     $("#problem-description").html(markdown.toHTML(@problem.description))
 
+    targetsTblDiv = $("#targets-table").html("")
+    targetsTbl = $("<table class='table table-striped'><thead><tr><th>Time</th><th>Target Value</th></tr></thead></table>")
     for time, target of @problem.targets
+      targetsTbl.append $("<tr><td>" + time + "s</td><td>" + target + "m</td></tr>")
       t = time / @timePixelRatio()
       #console.log time
       #console.log target
@@ -107,7 +110,11 @@ class FormulaGame
         .attr("class", "target")
         .attr("fill", "orange")
 
+    targetsTblDiv.append targetsTbl
+
+    $("#obstacles-header").hide()
     for time, obstacle of @problem.obstacles
+      $("#obstacles-header").show()
       # lessThan
       t = time / @timePixelRatio()
       @svg.append("svg:line")
