@@ -15,7 +15,6 @@
       %meta{:content => "200", :property => "og:image:width"}/
       %meta{:content => "200", :property => "og:image:height"}/
       %link{:href => "./favicon.ico", :rel => "shortcut icon"}/
-      %link{:rel => "stylesheet", :href => "//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"}
       %link{:rel => "stylesheet", :href => stylesheet_path("app")}
   %body
     .navbar.navbar-default.navbar-static{:role => "navigation"}
@@ -42,8 +41,12 @@
         .col-xs-12
           #problem-description
       .row
-        .col-xs-12
-          #data-table
+        .col-xs-6
+          %h3#targets-header Targets
+          #targets-table
+        .col-xs-6
+          #obstacles-table
+          %h3#obstacles-header Obstacles
       %hr
       .row
         .col-xs-12
